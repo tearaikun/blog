@@ -4,4 +4,4 @@ from users.models import User
 
 def user_api(request):
     users = User.objects.all()
-    return render(request, template_name="main.html", context=locals())
+    return render(request, template_name="index.html", context=locals())
