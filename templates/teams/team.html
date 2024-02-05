@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+  <section class="ftco-section testimony-section bg-dark">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-7 text-center heading-section ftco-animate">
+            <span class="subheading">Testimonial</span>
+          <h2 class="mb-3">Happy Clients</h2>
+        </div>
+      </div>
+      <div class="row ftco-animate flex display-flex flex-direction row">
+        <div class="col-md-12">
+          <div class="carousel-testimony owl-carousel ftco-owl">
+            {% for i in team %}
+            <div class="item ml-500" >
+              <div class="testimony-wrap rounded text-center py-4 pb-5 mt-3 mb-5">
+                <div class="user-img mb-2" style="background-image: url({{ i.image.url }})">
+                </div>
+                <div class="text pt-4">
+                  <p class="mb-4">{{ i.description }}</p>
+                  <p class="name">{{ i.fullname }}</p>
+                  <span class="position">{{ i.position }}</span>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
