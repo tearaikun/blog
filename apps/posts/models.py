@@ -5,8 +5,13 @@ class Post(models.Model):
     title = models.CharField(
         max_length=256
     )
-    description = models.TextField()
-    created_at = models.DateTimeField(
+    image = models.ImageField(
+        upload_to='post/',
+        verbose_name="Изображение",
+        blank=True,
+        null=True
+    )
+    date = models.DateTimeField(
         auto_now_add=True
     )
 
